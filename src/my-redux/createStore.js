@@ -1,4 +1,7 @@
-export default function createStore(reducer) {
+export default function createStore(reducer, enhancer) {
+  if (enhancer) {
+    return enhancer(createStore)(reducer);
+  }
   let currentState;
   let currentListeners = [];
 
@@ -20,7 +23,7 @@ export default function createStore(reducer) {
     };
   }
 
-  dispatch({ type: 'ASASASASASA/REDUX' });
+  dispatch({ type: 'REDUX/INIT' });
 
   return {
     getState,
