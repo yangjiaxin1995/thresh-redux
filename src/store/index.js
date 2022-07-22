@@ -1,5 +1,5 @@
-// import { createStore, applyMiddleware } from 'redux';
-import { createStore, applyMiddleware } from '../my-redux';
+// import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from '../my-redux';
 
 // import thunk from 'redux-thunk';
 import promise from 'redux-promise';
@@ -17,7 +17,9 @@ function countReducer(state = 0, action) {
 }
 
 const store = createStore(
-  countReducer,
+  combineReducers({
+    count: countReducer,
+  }),
   applyMiddleware(thunk, promise, logger)
 );
 
