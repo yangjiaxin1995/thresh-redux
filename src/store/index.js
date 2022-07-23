@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, combineReducers } from '../my-redux';
 import promise from 'redux-promise';
 // import logger from 'redux-logger';
 
-function countReducer(state = 0, action) {
+export function countReducer(state = 0, action) {
   switch (action.type) {
     case 'ADD':
       return state + 1;
@@ -20,7 +20,7 @@ const store = createStore(
   combineReducers({
     count: countReducer,
   }),
-  applyMiddleware(thunk, promise, logger)
+  applyMiddleware(promise, thunk, logger)
 );
 
 function logger({ getState, dispatch }) {
