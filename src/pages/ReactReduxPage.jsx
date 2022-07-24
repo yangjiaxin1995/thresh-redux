@@ -30,7 +30,6 @@ export default connect(
 )(
   class ReactReduxPage extends Component {
     render() {
-      console.log('props', this.props); //sy-log
       const { count, dispatch, add, minus } = this.props;
       return (
         <div>
