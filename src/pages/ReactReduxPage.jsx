@@ -1,12 +1,12 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators } from '../my-redux';
 
 // HOC higer order Component，高阶组件:是个函数，接受组件作为参数，返回新的组件
 export default connect(
   // mapStateToProps,
   //   (state, ownProps) => {
-  //     console.log("ownProps", ownProps); //sy-log
+  //     console.log("ownProps", ownProps);
 
   //     return state;
   //   }
